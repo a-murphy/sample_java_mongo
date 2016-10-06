@@ -6,9 +6,16 @@ jdk:
    - openjdk7
 services:
    - mongodb
-script:
-   - ant clean
-   - ant coverage
+   
+build:
+  pre_ci_boot:
+    image_name: drydock/u14javall
+    image_tag: tip
+    pull: true
+  ci:
+    - ant clean
+    - ant coverage
+ 
 notifications:
   email: false
 
