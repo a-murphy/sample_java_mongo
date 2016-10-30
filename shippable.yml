@@ -2,14 +2,14 @@ language: java
 
 jdk:
    - openjdk6
-   - openjdk7
+
 services:
    - mongodb
    
 build:
   pre_ci_boot:
     image_name: drydock/u14javall
-    image_tag: tip
+    image_tag: prod
     pull: true
   ci:
     - ant clean
