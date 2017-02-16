@@ -4,9 +4,12 @@ jdk:
    - openjdk6
 services:
    - mongodb
-script:
-   - ant clean
-   - ant coverage
+build:
+  pre_ci:
+    - echo $COMMIT_MESSAGE
+  ci:
+    - ant clean
+    - ant coverage
 notifications:
   email: false
 
