@@ -3,7 +3,7 @@ language: none
 #env:
 #  - test
   
-jdk:
+compiler:
   - openjdk6
 
 matrix:
