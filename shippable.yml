@@ -1,14 +1,14 @@
 language: none
 
-env:
-  - test
+#env:
+#  - test
   
 jdk:
   - openjdk6
 
 matrix:
-  include:
- #  - rvm: 2.0.0
+  none:
+   - rvm: 2.0.0
    - jdk: openjdk6
  
 services:
