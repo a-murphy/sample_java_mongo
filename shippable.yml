@@ -1,7 +1,7 @@
 #language: java
 
 matrix:
-  include:
+  exclude:
    - rvm: 2.0.0
    - jdk: openjdk6
  
