@@ -2,6 +2,9 @@ language: java
 
 env:
   - test
+  
+jdk:
+  - openjdk6
 
 matrix:
   include:
