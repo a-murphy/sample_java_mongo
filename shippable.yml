@@ -1,4 +1,4 @@
-language: java
+language: none
 
 env:
   - test
