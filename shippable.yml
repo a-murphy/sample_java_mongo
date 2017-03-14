@@ -7,7 +7,7 @@ compiler:
   - openjdk6
 
 matrix:
-  none:
+  include:
    - rvm: 2.0.0
    - jdk: openjdk6
  
