@@ -1,5 +1,8 @@
 language: java
 
+env:
+  - test
+
 matrix:
   include:
  #  - rvm: 2.0.0
