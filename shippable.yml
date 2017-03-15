@@ -12,6 +12,8 @@ language: java
 #   - rvm: 2.0.0
 #   - jdk: openjdk6
  
+build_image: drydock/u14javall:prod
+
 services:
    - mongodb
 script:
