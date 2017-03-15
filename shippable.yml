@@ -1,7 +1,8 @@
-language: none
+language: java
 
 env:
-  global: TEST=test1
+  global:
+    - TEST=test1
 
 matrix:
   include:
