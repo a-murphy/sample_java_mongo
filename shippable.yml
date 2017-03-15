@@ -1,9 +1,12 @@
 language: java
 
-jdk:
-   - oraclejdk7
-   - openjdk6
-   - openjdk7
+env:
+  - global: TEST=test1
+
+#jdk:
+#   - oraclejdk7
+#   - openjdk6
+#   - openjdk7
 services:
    - mongodb
 script:
