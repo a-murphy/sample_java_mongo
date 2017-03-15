@@ -3,6 +3,8 @@ language: java
 #env:
 #  global:
 #    - TEST=test1
+jdk:
+  - openjdk8
 
 matrix:
   include:
