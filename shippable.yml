@@ -3,14 +3,14 @@ language: java
 #env:
 #  global:
 #    - TEST=test1
-jdk:
-  - openjdk8
-  - openjdk7
+#jdk:
+#  - openjdk8
+#  - openjdk7
 
-matrix:
-  include:
-   - rvm: 2.0.0
-   - jdk: openjdk6
+#matrix:
+#  include:
+#   - rvm: 2.0.0
+#   - jdk: openjdk6
  
 services:
    - mongodb
