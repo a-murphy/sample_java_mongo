@@ -1,10 +1,7 @@
 language: none
 
-#env:
-#  - test
-  
-gemfile:
-  - openjdk6
+env:
+  - global: TEST=test1
 
 matrix:
   include:
