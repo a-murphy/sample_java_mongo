@@ -1,8 +1,8 @@
 language: java
 
-env:
-  global:
-    - TEST=test1
+#env:
+#  global:
+#    - TEST=test1
 
 matrix:
   include:
