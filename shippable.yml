@@ -3,8 +3,8 @@ language: none
 #env:
 #  - test
   
-#compiler:
-#  - openjdk6
+gemfile:
+  - openjdk6
 
 matrix:
   include:
