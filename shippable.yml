@@ -5,7 +5,7 @@ env:
 
 build:
   ci:
-    - echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/image-resource.env
+    - if [ "$BRANCH" == "test1"]; then echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/image-resource.env; fi
 
 notifications:
   email: false
