@@ -3,15 +3,10 @@ language: java
 env:
   - global: TEST=test1
 
-#jdk:
-#   - oraclejdk7
-#   - openjdk6
-#   - openjdk7
-services:
-   - mongodb
-script:
-   - ant clean
-   - ant coverage
+build:
+  ci:
+    - echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/image-resource.env
+
 notifications:
   email: false
 
