@@ -9,7 +9,7 @@ env:
 #   - openjdk7
 build:
   ci:
-    - if [ "$BRANCH" == "test1" ]; then echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/image-resource.env; fi
+    - if [ "$BRANCH" == "test1" && "$IS_PULL_REQUEST" == "false" ]; then echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/image-resource.env; fi
 notifications:
   email: false
 
