@@ -7,11 +7,9 @@ env:
 #   - oraclejdk7
 #   - openjdk6
 #   - openjdk7
-services:
-   - mongodb
-script:
-   - ant clean
-   - ant coverage
+build:
+  ci:
+    - if [ "$BRANCH" == "test1" ]; then echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/image-resource.env; fi
 notifications:
   email: false
 
