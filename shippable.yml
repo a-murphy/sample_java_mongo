@@ -12,6 +12,9 @@ language: java
 #   - rvm: 2.0.0
 #   - jdk: openjdk6
  
+addons:
+  firefox: "23.0"
+
 build_image: drydock/u16javall:master
 
 services:
