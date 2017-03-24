@@ -15,13 +15,24 @@ language: java
 addons:
   firefox: "23.0"
 
-build_image: drydock/u16javall:master
-
 services:
    - mongodb
-script:
-   - ant clean
-   - ant coverage
+build:
+  ci:
+    - ant clean
+    - ant coverage
 notifications:
   email: false
 
+integrations:
+  notifications:
+    - integrationName: webhookIntegration
+      type: webhook
+      payload:
+        - isPRBuild=$IS_PULL_REQUEST
+        - branchName=$BRANCH
+        - message=Shippable Run $BUILD_NUMBER ($BUILD_URL)
+      on_success: always
+      on_failure: always
+      on_pull_request: never
+      on_start: always
