@@ -11,9 +11,6 @@ language: java
 #  include:
 #   - rvm: 2.0.0
 #   - jdk: openjdk6
- 
-addons:
-  firefox: "23.0"
 
 services:
    - mongodb
@@ -21,18 +18,13 @@ build:
   ci:
     - ant clean
     - ant coverage
-notifications:
-  email: false
 
 integrations:
   notifications:
-    - integrationName: webhookIntegration
-      type: webhook
-      payload:
-        - isPRBuild=$IS_PULL_REQUEST
-        - branchName=$BRANCH
-        - message=Shippable Run $BUILD_NUMBER ($BUILD_URL)
+    - integrationName: email
+      type: email
       on_success: always
       on_failure: always
       on_pull_request: never
       on_start: always
+      
