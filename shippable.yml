@@ -19,7 +19,7 @@ build:
   ci:
     - touch shippable/codecoverage/test.xml
     - ant clean
-    - ant coverage
+#    - ant coverage
   advancedReporting: true
   cache: true
 
