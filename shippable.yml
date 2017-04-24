@@ -3,9 +3,10 @@ language: java
 #env:
 #  global:
 #    - TEST=test1
-#jdk:
-#  - openjdk8
-#  - openjdk7
+jdk:
+  - openjdk8
+  - openjdk7
+  - openjdk6
 
 #matrix:
 #  include:
