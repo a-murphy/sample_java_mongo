@@ -18,6 +18,7 @@ build:
   ci:
     - ant clean
     - ant coverage
+  advancedReporting: true
 
 integrations:
   notifications:
