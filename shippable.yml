@@ -16,9 +16,11 @@ services:
    - mongodb
 build:
   ci:
+    - touch shippable/codecoverage/test.xml
     - ant clean
     - ant coverage
   advancedReporting: true
+  cache: true
 
 integrations:
   notifications:
