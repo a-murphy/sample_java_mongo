@@ -1,8 +1,10 @@
 language: java
 
-#env:
-#  global:
-#    - TEST=test1
+env:
+  global:
+    - TEST=test1
+    - secure: orl4NycukrWywExGkJ8O1EYOxNsFU70WC/XG3t9xx3+9oJ4IDkY2qbwMCHjTYzlpmMHJIm9cRjWfJZJLXK9f2ceuCOhI+0xR/VmzWBgFlZHis6mFKCdGbVTCNDWSwPuHB5acLOABKaQVPYUhfV9MxffppwIz85FFY59LYl0zc7DHHqU0i7B2c6jGX2N9vynl9/+kqM5GCg1tf9Fltqpp+w8M480odIqQOeunGhYF5mpAra/8wEaTvULhQCO39BnZFDl8d1Zcw/DQ0cGiwfyqgjakhqnpJsmn58ZfjBbwTs2HjbFeDOZ64/I2n1HLqpejQQrL/yzmIZ1JcHWQQIIfDQ==
+    - secure: UaFgNDS00ImwHKJAaUY5RPMYtno4Sq10jL5/JNBQtREPDrtDmbDItl4daMxDBXROtMH75D/Km5nFo5BPkUY2Vcb/0vdokq6BFwQU0P85b5tvBvV+mcXmVZJQIXaKJRuv847IRFCynONPclUIekyDU7lPbCHxH2wHNxPsnasCqvYzEzB2xVZ2jIEwunK11fHWKrvncFgw48oTPcpyqfnbeO5u9iohtqeOg0pxM6sQf1vEy5UWm9bsLUA/GRpdY9e6Xfmkm/V5IIvS3HpOm5znC+IdeGiTz6doretq4LqGwpE9ww0F4VwFZYQJlTXtMfXgp/5Kjz7g5addw8s28cn1Xg==
 jdk:
   - openjdk8
   - openjdk7
