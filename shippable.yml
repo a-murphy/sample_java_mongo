@@ -2,16 +2,15 @@ language: java
 
 env:
   - global: TEST=test1
+  - secure: oy0lr4MKViAGDlY9M0XYJLj5EoLUXCgl1nkKL2YrhUmYBLCWVzNiA4P9Bj/NxJbwqXgNloJOS/fEQMtUoKErjS+5gKhtCJjEBS5iZxrbV+TPpywHY2SdfwBR5ySaVKH26Y7vQQurJOdMFQMkDd1Ry4rhPA3OVQrWoltEcpw1wnOyVhN9qM7E0zBiJRyjqQioz/dWEavs7yHy1g5SgaOns3VzpGDlZf9jfO7UcWhElgFNOCbOqA/56+dXxSN4siNd0QqmvE7iNB5UE1m7FRWsjxxdP1EWPL46mIFrrqcUA+61zoVMptGcbM864aeVwjAv3Mt+K6yo1BheURfYLPVaCg==
 
-#jdk:
-#   - oraclejdk7
-#   - openjdk6
-#   - openjdk7
 services:
    - mongodb
-script:
-   - ant clean
-   - ant coverage
-notifications:
-  email: false
-
+build:
+  ci:
+    - ant clean
+  post_ci:
+    - $(docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST dockercloud/client --user $DOCKER_USER --pass $DOCKER_PASSWORD --debug amurphy/swarm1)
+    - docker ps || true # Running docker ps through the proxy
+    - unset DOCKER_HOST
+    - docker ps # Running 'docker ps' locally
