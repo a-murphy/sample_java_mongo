@@ -12,6 +12,7 @@ build:
   ci:
     - ant clean
   post_ci:
+    - docker info
     - $(docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST dockercloud/client --user $DOCKER_USER --pass $DOCKER_PASSWORD --debug amurphy/swarm1)
     - docker ps || true # Running docker ps through the proxy
     - unset DOCKER_HOST
