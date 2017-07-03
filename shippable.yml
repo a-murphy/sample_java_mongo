@@ -14,12 +14,10 @@ build:
   post_ci:
     - docker ps
     - docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST dockercloud/client --user $DOCKER_USER --pass $DOCKER_PASSWORD amurphy/swarm1
-    - DOCKER_HOST="tcp://"$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' client_proxy_amurphy_swarm1)":2375"
+    - export DOCKER_HOST="tcp://"$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' client_proxy_amurphy_swarm1)":2375"
     - echo $DOCKER_HOST
     - docker ps || true # Running docker ps through the proxy
     - docker node ls || true
     - DOCKER_HOST=172.17.42.1
-    - echo $DOCKER_HOST
-    - docker ps || true # Running docker ps through the proxy
     
     - docker stop client_proxy_amurphy_swarm1 && docker rm client_proxy_amurphy_swarm1
