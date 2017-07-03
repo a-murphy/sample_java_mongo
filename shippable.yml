@@ -15,7 +15,11 @@ build:
     - apt-get install -y net-tools
     - $(docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST dockercloud/client --user $DOCKER_USER --pass $DOCKER_PASSWORD --debug amurphy/swarm1)
     - echo $DOCKER_HOST
-    - DOCKER_HOST=$(ifconfig docker0|grep -Po 't addr:\K[\d.]+')
+    #- DOCKER_HOST=$(ifconfig docker0|grep -Po 't addr:\K[\d.]+')
+    - DOCKER_HOST=172.17.0.1
+    - echo $DOCKER_HOST
+    - docker ps || true # Running docker ps through the proxy
+    - DOCKER_HOST=172.17.42.1
     - echo $DOCKER_HOST
     - docker ps || true # Running docker ps through the proxy
     - unset DOCKER_HOST
