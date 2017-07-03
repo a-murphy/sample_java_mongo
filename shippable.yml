@@ -14,7 +14,8 @@ build:
   post_ci:
     - apt-get install -y net-tools
     - docker ps
-    - $(docker run --rm -v /var/run/docker.sock:/var/run/docker.sock dockercloud/client --user $DOCKER_USER --pass $DOCKER_PASSWORD amurphy/swarm1)
+    - echo $DOCKER_HOST
+    - $(docker run --rm -v /var/run/docker.sock:/var/run/docker.sock dockercloud/client --user $DOCKER_USER --pass $DOCKER_PASSWORD -e DOCKER_HOST amurphy/swarm1)
     #- DOCKER_HOST=$(ifconfig docker0|grep -Po 't addr:\K[\d.]+')
     - DOCKER_HOST=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' client_proxy_amurphy_swarm1)
     - echo $DOCKER_HOST
