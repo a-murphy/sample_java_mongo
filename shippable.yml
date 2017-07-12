@@ -11,6 +11,7 @@ services:
 build:
   ci:
     - ant clean
+
  # post_ci:
  #   - docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST dockercloud/client --user $DOCKER_USER --pass $DOCKER_PASSWORD amurphy/swarm1
  #   - export DOCKER_HOST="tcp://"$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' client_proxy_amurphy_swarm1)":2375"
