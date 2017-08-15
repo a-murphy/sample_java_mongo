@@ -3,14 +3,16 @@ language: java
 jdk:
   - openjdk8
 
-env:
-  - secure: oy0lr4MKViAGDlY9M0XYJLj5EoLUXCgl1nkKL2YrhUmYBLCWVzNiA4P9Bj/NxJbwqXgNloJOS/fEQMtUoKErjS+5gKhtCJjEBS5iZxrbV+TPpywHY2SdfwBR5ySaVKH26Y7vQQurJOdMFQMkDd1Ry4rhPA3OVQrWoltEcpw1wnOyVhN9qM7E0zBiJRyjqQioz/dWEavs7yHy1g5SgaOns3VzpGDlZf9jfO7UcWhElgFNOCbOqA/56+dXxSN4siNd0QqmvE7iNB5UE1m7FRWsjxxdP1EWPL46mIFrrqcUA+61zoVMptGcbM864aeVwjAv3Mt+K6yo1BheURfYLPVaCg==
+#env:
+#  - secure: oy0lr4MKViAGDlY9M0XYJLj5EoLUXCgl1nkKL2YrhUmYBLCWVzNiA4P9Bj/NxJbwqXgNloJOS/fEQMtUoKErjS+5gKhtCJjEBS5iZxrbV+TPpywHY2SdfwBR5ySaVKH26Y7vQQurJOdMFQMkDd1Ry4rhPA3OVQrWoltEcpw1wnOyVhN9qM7E0zBiJRyjqQioz/dWEavs7yHy1g5SgaOns3VzpGDlZf9jfO7UcWhElgFNOCbOqA/56+dXxSN4siNd0QqmvE7iNB5UE1m7FRWsjxxdP1EWPL46mIFrrqcUA+61zoVMptGcbM864aeVwjAv3Mt+K6yo1BheURfYLPVaCg==
 
 #services:
 #   - mongodb
 build:
   ci:
     - ant clean
+    - jfrog -version
+    - jfrog rt search test/
 
  # post_ci:
  #   - docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST dockercloud/client --user $DOCKER_USER --pass $DOCKER_PASSWORD amurphy/swarm1
@@ -19,3 +21,8 @@ build:
  #   - unset DOCKER_HOST
     
  #   - docker stop client_proxy_amurphy_swarm1 && docker rm client_proxy_amurphy_swarm1
+
+integrations:
+  hub: 
+    - integrationName: Artifactory
+      type: artifactory
