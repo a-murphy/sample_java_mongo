@@ -9,6 +9,9 @@ jdk:
 #services:
 #   - mongodb
 build:
+  pre_ci_boot:
+    image_name: drydock/u14nod
+    image_tag: v5.4.1
   ci:
     - ant clean
     - jfrog -version
