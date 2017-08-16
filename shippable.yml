@@ -12,6 +12,7 @@ branches:
 
 build:
   ci:
+    - sleep 5
     - mysql -e "CREATE USER shippable@localhost IDENTIFIED BY ''; GRANT ALL ON *.* TO shippable@localhost; FLUSH PRIVILEGES;"
     - mysql -e 'CREATE DATABASE `test`;'
     - mysql -e "ALTER USER root@localhost IDENTIFIED BY 'root';"
