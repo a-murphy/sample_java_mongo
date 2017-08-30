@@ -10,7 +10,7 @@ jdk:
 #   - mongodb
 build:
  # pre_ci_boot:
- #image_name: drydock/u14javall
+ #   image_name: drydock/u14javall
  #   image_tag: v5.7.3
   ci:
     - ant clean
